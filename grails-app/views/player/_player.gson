@@ -1,0 +1,11 @@
+import vectorracer.player.Player
+
+model {
+	Player player
+}
+
+json {
+	id player.id
+    name player.getName()
+    color player.getColor()
+}
