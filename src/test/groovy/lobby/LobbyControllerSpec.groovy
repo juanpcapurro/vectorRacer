@@ -1,4 +1,4 @@
-package lobby
+package vectorracer
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification

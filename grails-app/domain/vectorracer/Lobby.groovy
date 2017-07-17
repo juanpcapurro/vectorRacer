@@ -30,5 +30,8 @@ class Lobby {
     Match beginMatch(){
         return new Match(playerList,raceTrack)
     }
+    int playerCount(){
+        return this.playerList.size()
+    }
 
 }

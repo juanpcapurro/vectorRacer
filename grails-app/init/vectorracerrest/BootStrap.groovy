@@ -20,6 +20,9 @@ class BootStrap {
         lobby.save(failOnError:true)
         def otherLobby = new Lobby()
         otherLobby.save(failOnError:true)
+        lobby.save(failOnError:true, flush: true)
+        println(lobby.playerCount())
+        println(otherLobby.playerCount())
     }
     def destroy = {
     }

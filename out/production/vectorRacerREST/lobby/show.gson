@@ -1,0 +1,11 @@
+import vectorracer.Lobby
+
+model{
+    Lobby lobby
+}
+
+json{
+    size lobbyList.size()
+
+}
+

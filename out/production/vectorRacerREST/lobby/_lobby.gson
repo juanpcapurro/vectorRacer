@@ -1,0 +1,13 @@
+import vectorracer.Lobby
+import vectorracer.player.Player
+
+model {
+	Lobby lobby
+}
+
+json{
+	id lobby.id
+	players Lobby.getPlayerList(),{ Player player->
+		g.render(player)
+	}
+}

@@ -1,17 +1,12 @@
-import grails.plugin.json.builder.StreamingJsonBuilder
 import vectorracer.Lobby
-import vectorracer.player.Player
 
 model{
     List<Lobby> lobbyList
 }
 json{
-    size lobbyList.size()
-//    lobbies lobbyList,{Lobby currentLobby->
-//        id currentLobby.id
-//        name "nombre jarcodeado"
-//        playerCount currentLobby
-//    }
-    g.render(collection: lobbyList, var: 'lobby')
+    "lobby-skeletons" lobbyList,{Lobby currentLobby->
+        id currentLobby.id
+        size currentLobby.playerCount()
+    }
 }
 

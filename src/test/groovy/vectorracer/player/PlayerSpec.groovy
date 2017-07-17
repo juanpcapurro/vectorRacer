@@ -48,12 +48,6 @@ class PlayerSpec extends Specification {
         expect:
             charly.isReadyToPlay()==false
     }
-    void "emtpy initalization fails"(){
-        when:
-            charly = new Player()
-        then:
-            IncompleteDomainObjectException ex = thrown()
-    }
     void "short names are rejected"(){
         when:
             charly=new Player("x",Color.RED)

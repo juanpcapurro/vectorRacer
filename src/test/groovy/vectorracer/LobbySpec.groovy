@@ -3,7 +3,6 @@ package vectorracer
 
 import vectorracer.player.*
 import vectorracer.raceTrack.RaceTrack
-import vectorracer.IncompleteDomainObjectException
 import grails.test.mixin.TestFor
 import grails.test.mixin.Mock
 import spock.lang.Specification
@@ -83,5 +82,16 @@ class LobbySpec extends Specification {
             lobby.beginMatch()
         then:
             notThrown(IncompleteDomainObjectException)
+    }
+    def "player count returns 0 for an empty lobby"(){
+        expect:
+            lobby.playerCount() == 0
+    }
+    def "playerCount returns the correct value"(){
+        given:
+            lobby.addPlayer(charly)
+            lobby.addPlayer(dami)
+        expect:
+            lobby.playerCount()==2
     }
 }
