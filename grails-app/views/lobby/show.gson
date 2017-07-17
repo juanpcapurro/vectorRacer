@@ -1,11 +1,16 @@
 import vectorracer.Lobby
+import vectorracer.player.Player
 
 model{
     Lobby lobby
 }
 
 json{
-    size lobbyList.size()
-
+    id lobby.id
+    players lobby.getPlayerList(),{Player player ->
+        name player.getName()
+        color player.getColor()
+        isReady player.isReadyToPlay()
+    }
 }
 

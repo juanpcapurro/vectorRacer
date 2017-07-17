@@ -4,9 +4,10 @@ model{
     List<Lobby> lobbyList
 }
 json{
-    "lobby-skeletons" lobbyList,{Lobby currentLobby->
-        id currentLobby.id
-        size currentLobby.playerCount()
+    "lobby-skeletons" lobbyList,{Lobby currentLobby ->
+        id currentLobby.getId()
+        name currentLobby.getName()
+        size currentLobby.getPlayerList().size()
     }
 }
 

@@ -7,13 +7,15 @@ class Lobby {
 
     static constraints = {
         raceTrack nullable:true
+        name empty:false, size: 4..30
     }
     static mapping={
         playerList lazy: false
     }
     static hasMany = [playerList: Player]
-    def raceTrack
+    RaceTrack raceTrack
     List<Player> playerList
+    String name
 
     void addPlayer(player){
         if(playerList.any{it.getColor()==player.getColor()})
@@ -22,16 +24,17 @@ class Lobby {
             throw new NameAlreadyInUse()
     	playerList.add(player)
 	}
-    def getPlayerList(){
-        return playerList.clone()
+    List<Player> getPlayerList(){
+        return playerList.toList()
     }
-    def chooseTrack(RaceTrack track){
+    void chooseTrack(RaceTrack track){
         this.raceTrack=track
     }
     Match beginMatch(){
         return new Match(playerList,raceTrack)
     }
-    Lobby(){
+    Lobby(String name){
+        this.name = name
         this.playerList= new ArrayList<Player>()
     }
     int playerCount(){

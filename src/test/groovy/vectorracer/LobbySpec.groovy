@@ -22,14 +22,13 @@ class LobbySpec extends Specification {
     def otherCharly, capitalizedCharlie, capsLockCharlie, sameName
 
     def setup() {
-		lobby = new Lobby()
+		lobby = new Lobby("a lobby")
 		charly = new Player("charly",Color.BLACK)
         dami = new Player("damian", Color.RED)
         gabi = new Player("gabriel",Color.BLUE)
         otherCharly = new Player("charly",Color.BLUE)
         capitalizedCharlie = new Player("Charly", Color.RED)
         capsLockCharlie = new Player("CHARLY", Color.RED)
-        
     }
 
     def cleanup() {

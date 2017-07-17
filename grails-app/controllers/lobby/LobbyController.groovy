@@ -1,6 +1,7 @@
 package vectorracer
 
-import vectorracer.Lobby
+import vectorracer.player.Player
+import vectorracer.raceTrack.RaceTrack
 
 import static org.springframework.http.HttpStatus.*
 import grails.transaction.Transactional
@@ -13,11 +14,27 @@ class LobbyController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond ([lobbyList: Lobby.getAll()])
+        def list = Lobby.getAll()
+        println list
+        respond lobbyList: list
     }
 
     def show(Long id) {
-        respond Lobby.findById(id)
+        def lobby= Lobby.get(id)
+//        def charlyCompleto = new Player("charly",Color.BLACK)
+//        charlyCompleto.save(failOnError:true)
+//        def damiCompleto = new Player("dami",Color.RED)
+//        damiCompleto.save(flush:true)
+//        def lobby = new Lobby()
+//        lobby.addPlayer(charlyCompleto)
+//        lobby.addPlayer(damiCompleto)
+//        charlyCompleto.toggleReady()
+//        damiCompleto.toggleReady()
+//        lobby.chooseTrack(new RaceTrack())
+//        lobby.save(failOnError:true)
+
+        println(lobby.getPlayerList())
+        respond lobby
     }
 
     @Transactional
