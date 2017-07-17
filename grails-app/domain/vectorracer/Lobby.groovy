@@ -11,8 +11,9 @@ class Lobby {
     static mapping={
         playerList lazy: false
     }
-    def playerList=[]
+    static hasMany = [playerList: Player]
     def raceTrack
+    List<Player> playerList
 
     void addPlayer(player){
         if(playerList.any{it.getColor()==player.getColor()})
@@ -29,6 +30,9 @@ class Lobby {
     }
     Match beginMatch(){
         return new Match(playerList,raceTrack)
+    }
+    Lobby(){
+        this.playerList= new ArrayList<Player>()
     }
     int playerCount(){
         return this.playerList.size()

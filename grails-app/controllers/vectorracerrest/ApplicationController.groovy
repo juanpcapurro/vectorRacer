@@ -1,4 +1,4 @@
-package vectorracerrest
+package vectorracer
 
 import grails.core.GrailsApplication
 import grails.util.Environment

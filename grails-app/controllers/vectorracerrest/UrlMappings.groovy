@@ -1,4 +1,4 @@
-package vectorracerrest
+package vectorracer
 
 class UrlMappings {
 
