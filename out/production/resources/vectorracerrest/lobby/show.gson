@@ -1,0 +1,11 @@
+import vectorracer.Lobby
+
+model{
+    Lobby lobby
+}
+
+json{
+    id lobby.id
+    players json(lobby.playerList.collect{ it.id})
+}
+

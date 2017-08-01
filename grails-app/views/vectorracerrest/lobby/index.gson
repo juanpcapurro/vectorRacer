@@ -1,0 +1,10 @@
+import vectorracer.Lobby
+
+model{
+    List<Lobby> lobbyList
+}
+json{
+        lobby json(lobbyList)
+    }
+}
+

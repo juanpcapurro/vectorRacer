@@ -1,7 +1,7 @@
-package vectorracer
+package vectorracerrest
 
-import vectorracer.player.*
-import vectorracer.raceTrack.RaceTrack
+import vectorracerrest.player.*
+import vectorracerrest.raceTrack.RaceTrack
 
 class BootStrap {
 
@@ -18,7 +18,7 @@ class BootStrap {
         lobby.chooseTrack(new RaceTrack())
         def match = lobby.beginMatch().save(failOnError:true)
         lobby.save(failOnError:true)
-        def otherLobby = new Lobby("empty lobby")
+        def otherLobby = new Lobby("empty vectorracerrest.lobby")
         otherLobby.save(failOnError:true)
         lobby.save(failOnError:true, flush: true)
         println(lobby.playerCount())
