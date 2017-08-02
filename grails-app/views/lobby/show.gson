@@ -1,0 +1,7 @@
+import vectorracerrest.Lobby
+
+model {
+	Lobby lobby
+}
+
+json tmpl.lobby(lobby)

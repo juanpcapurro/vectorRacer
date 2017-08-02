@@ -4,4 +4,6 @@ model {
 	Player player
 }
 
-json tmpl.player(player)
+json{
+	player g.render(model: [player:player],template: 'player')
+}

@@ -4,8 +4,9 @@ model {
 	Player player
 }
 
-json {
-	id player.id
-    name player.getName()
-    color player.getColor()
+json{
+    id player.id
+    name player.name
+    color player.color
+    isReady player.isReadyToPlay()
 }

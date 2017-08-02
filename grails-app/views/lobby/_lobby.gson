@@ -1,0 +1,11 @@
+import vectorracerrest.Lobby
+
+model {
+	Lobby lobby
+}
+
+json{
+	id lobby.id
+    name lobby.name
+    players g.render(lobby.playerList.collect{it.id})
+}

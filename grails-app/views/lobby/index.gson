@@ -1,0 +1,10 @@
+import vectorracerrest.Lobby
+
+model {
+	Iterable<Lobby> lobbyList
+}
+
+json{
+	lobby g.render(template: 'lobby', collection: lobbyList?: [], var: 'lobby')
+}
+

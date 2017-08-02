@@ -14,7 +14,12 @@ class PlayerController {
         respond Player.list(params), model:[playerCount: Player.count()]
     }
 
-    def show(Player player) {
+    def show(long id) {
+        Player player = Player.get(id)
+        if(!player) {
+            render status: NOT_FOUND
+            return
+        }
         respond player
     }
 

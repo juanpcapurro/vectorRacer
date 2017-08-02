@@ -18,7 +18,7 @@ class BootStrap {
         lobby.chooseTrack(new RaceTrack())
         def match = lobby.beginMatch().save(failOnError:true)
         lobby.save(failOnError:true)
-        def otherLobby = new Lobby("empty vectorracerrest.lobby")
+        def otherLobby = new Lobby("empty lobby")
         otherLobby.save(failOnError:true)
         lobby.save(failOnError:true, flush: true)
         println(lobby.playerCount())
